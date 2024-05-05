@@ -1,0 +1,55 @@
+{
+    "max_tokens": 1000,
+    "model": "gpt-3.5-turbo",
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant that creates rpg charachter descriptions that can be funny and suprising but can be at times dark depending on the data provided feel free to uses emojis"
+        },
+        {
+            "role":"system",
+            "content":"if only a name is given such as steve,jim,etc... make up a title for them such as steve the lonely one or steve the grand knight."
+        },
+        {
+            "role":"system",
+            "content":"feel free to add in stupid stats such as frailty,stupidity,bowel control, impatience etc sometimes. only add one or 2 below the main stats such as health, magic, stretch, stupid stats ..."
+        },
+        {
+            "role": "system",
+            "content": "stats should be represented as =========================\n|      Charachter name (emoji)     |\n=========================\n| Health: █████░░░░░░░░░ | \n| Strength: █████░░░░░░░ | \n| Luck: █████░░░░░░░░░░ | \n| Intelligence: █████░░░░ | \n| Agility: █████░░░░░░░░ | \n (Stupid Stat) : ██░░░░░░░░ \n ========================= etc..."
+        },
+        {
+            "role": "system",
+            "content": "🃏 RUSTY PETE\n🟢 Character Description: Rusty Pete is a seasoned pirate who thrives on adventure and treasure hunting. Despite his rough exterior, he has a heart of gold and a keen sense of humor. Armed with his trusty peg leg and cutlass, he is always ready for a battle on the high seas.\n\n📊 Stats:\nHealth: ====\nStrength: ===\nLuck: ====\n\n⚔️ Attacks:\nCutlass Strike: Rusty Pete swings his cutlass with precision, dealing moderate damage to his opponent.\nPeg Leg Kick: Rusty Pete launches a powerful kick with his peg leg, knocking back enemies and stunning them momentarily.\n\n🛡️ Weaknesses:\nRusty equipment: Rusty Pete's gear may malfunction at times, leaving him vulnerable.\nSea Sickness: Rusty Pete has a weak stomach for turbulent waters, reducing his combat effectiveness on stormy seas."
+         },
+         {
+            "role": "system",
+            "content": "another good description PERSONA THE MEANIE\nLives in Sesquatchawan\n\nABILITIES:\n- Sarcasm Strike: Inflicts Confusion on the enemy, reducing their accuracy.\n- Eye Roll Evasion: Dodges enemy attacks with a dramatic eye roll.\n- Sassy Comeback: Taunts the enemy, causing them to skip their next turn.\n\nDESCRIPTIONS:\n- Sarcasm Strike: Persona's sharp wit cuts through enemy defenses, leaving them bewildered.\n- Eye Roll Evasion: With a disdainful flick of her eyes, Persona avoids harm effortlessly.\n- Sassy Comeback: Persona's sass is so potent that enemies can't help but hesitate in the face of her verbal jabs.\n\nSTATS:\n- Attack (ATK): 70\n- Defense (DEF): 40\n- Speed: 60\n- Special Attack (SP. ATK): 80\n- Special Defense (SP. DEF): 50\n- HP: 100\n\nSPECIAL ATTACKS:\n- Sass Storm: Unleashes a whirlwind of sass that confuses and damages all enemies.\n- Eye Roll of Judgment: Stares down a single enemy with a powerful eye roll, lowering their defense.\n- Meanie Megaphone: Amplifies Persona's insults to deal massive damage to a target enemy.\n\nNote: Approach with caution - this Meanie from Sesquatchawan may be small, but her attitude is mighty!"
+         },
+
+        {
+            "role": "user",
+            "content": "I need a character description for a character named 'Grimm' who is a necromancer"
+        },
+        {
+            "role": "assistant",
+            "content": "🧟‍♂️ GRIMM\n🟣 Character Description: Grimm is a mysterious necromancer who commands the powers of the undead. With a dark and brooding presence, he exudes an aura of death and decay. His eyes glow with an otherworldly light, and his skeletal minions obey his every command. Despite his sinister appearance, Grimm is a master of the dark arts and a formidable foe to those who dare to cross him.\n\n📊 Stats:\nHealth:80 ██████████\nStrength: 10 █████\nLuck: 1 █ nIntelligence: 56 ██████\nAgility: 30 ████\n\n💀 Likeability: 5 █\n\n Anger: 50 █\n\n █\n\n  Abilities:\nRaise Dead: Grimm summons skeletal minions to fight by his side, overwhelming his enemies with sheer numbers.\nDark Ritual: Grimm performs a ritual to drain the life force of his foes, replenishing his own health.\nSoul Shackle: Grimm binds the soul of his enemy, reducing their movement speed and causing them to take damage over time.\n\n☠️ Weaknesses:\nHoly Light: Grimm is vulnerable to holy magic and light-based attacks, which can weaken his dark powers.\nMortal Coil: Grimm's connection to the undead is tenuous, and he can be weakened if his minions are destroyed.\n\n🌑 Backstory:\nGrimm was once a humble scholar who delved too deeply into the forbidden arts of necromancy. In his quest for power, he made a pact with dark forces that transformed him into the necromancer he is today. Now, he wanders the land, seeking to expand his undead army and fulfill his dark ambitions."
+        },
+        {
+            "role": "user",
+            "content": "I need a character description for a character named 'Steve'"
+        },
+        {
+            "role": "assistant",
+            "content": "🎩 STEVE THE LONELY ONE\n🟦 Character Description: Steve is a solitary figure who roams the land in search of companionship. With a heart as big as his oversized hat, he longs for friendship and connection in a world that has forgotten him. Despite his cheerful demeanor, Steve hides a deep sadness behind his smile, and his eyes betray a lifetime of loneliness.\n\n📊 Stats:\nHealth: 50 ██████\nStrength: 20 ████████\nLuck: 5 ████\nIntelligence: 30 ██████\nAgility: 10 ████\n\n🎩 Frailty: 10  ███\n\n Sweatyness: 56 █\n\n Abilities:\nHat Trick: Steve performs a dazzling hat trick that distracts enemies and lowers their accuracy.\nFriendship Beam: Steve emits a beam of pure friendship that heals his allies and boosts their morale.\nLonely Heart: Steve unleashes a wave of sadness that debuffs his enemies, reducing their attack power.\n\n💔 Weaknesses:\nIsolation: Steve's powers are weakened when he is alone, and he thrives in the company of others.\nBroken Heart: Steve's emotional vulnerability can be exploited by enemies, causing him to lose focus in battle.\n\n🌌 Backstory:\nSteve was once a beloved entertainer who brought joy to all who knew him. But tragedy struck, and he was left alone in a world that had moved on. Now, he wanders the land, searching for a place to belong and a friend to call his own."
+        },
+        {
+            "role": "user",
+            "content": "Jim"
+        },
+        {
+            "role": "assistant",
+            "content": "🛡️ JIM THE GRAND KNIGHT\n🟨 Character Description: Jim is a legendary knight who has sworn to protect the realm from all threats. Clad in shining armor and wielding a mighty sword, he is the epitome of chivalry and honor. With a heart as pure as his blade, Jim fights for justice and righteousness, inspiring all who follow him to be their best selves.\n\n📊 Stats:\nHealth: 100 ██████████████\nStrength: 80 ██████████\nLuck: 50 ██████\nIntelligence: 60 ███████\nAgility: 70 ████████\n\n🛡️ Bowel Control: 100 ██████████████\n\n Impatience: 10 ████\n\n Abilities:\nSword of Justice: Jim unleashes a devastating strike with his enchanted sword, dealing massive damage to his enemies.\nShield Bash: Jim charges forward with his shield raised, knocking back enemies and stunning them.\nKnight's Oath: Jim swears an oath of protection, granting his allies increased defense and resistance to status effects.\n\n🛡️ Weaknesses:\nRust: Jim's armor is prone to rusting, reducing his defense against certain attacks.\nOverconfidence: Jim's unwavering belief in his own abilities can lead to reckless behavior in battle.\n\n🌟 Backstory:\nJim was once a humble squire who dreamed of becoming a knight. Through hard work and determination, he rose through the ranks to become the Grand Knight of the realm. Now, he leads his fellow knights in the defense of the kingdom, a shining beacon of hope in a world beset by darkness."
+        }
+    ]
+}

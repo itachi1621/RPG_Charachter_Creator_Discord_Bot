@@ -1,0 +1,6 @@
+OPENAI_API_KEY = ""
+DISCORD_BOT_TOKEN=""
+OPEN_AI_CONFIG_FILE_LOC="configs/openai_config.json USE FULL PATH to file not relative e,g C:/USers/SAM etc.. or /home/sam...."
+BOTNAME = "RPG Maker"
+VERSION = "1.0.0"
+EMBED_COLOR = "0x0000FF"
