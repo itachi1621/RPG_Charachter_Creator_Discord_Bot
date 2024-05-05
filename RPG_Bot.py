@@ -86,7 +86,7 @@ async def create_charachter(interaction:discord.Interaction, * ,charachter_info:
             message = message[:128] + '....' #truncate the message to 128 characters and add .... to the end discord embeds can only hold 256 characters
             #i may intro nltk to summarize the message later mabee but this is close nuff for now
 
-        data = ass_config
+        data =  ass_config.copy()
         data['messages'].append({"role": "user","content": charachter_info})
         async with aiohttp.ClientSession() as session:
             async with session.post('https://api.openai.com/v1/chat/completions', json=data,
