@@ -5,6 +5,7 @@ import aiohttp;
 import os;
 import re;
 import dotenv;
+import copy;
 
 #load the dotenv file
 dotenv.load_dotenv()
@@ -63,7 +64,7 @@ async def version(interaction:discord.Interaction):
     await interaction.response.send_message(embed=embed)
 
 @bot.tree.command(name="create_charachter",description="Give your charachter info e.g greg the bowler from taiwan")
-async def create_charachter(interaction:discord.Interaction, * ,charachter_info:str):
+async def create_charachter(interaction:discord.Interaction, * ,charachter_info:str=""):
     try :
         await interaction.response.defer()
         open_ai_key = OPENAI_KEY
@@ -85,9 +86,12 @@ async def create_charachter(interaction:discord.Interaction, * ,charachter_info:
         if message_length >= 256:
             message = message[:128] + '....' #truncate the message to 128 characters and add .... to the end discord embeds can only hold 256 characters
             #i may intro nltk to summarize the message later mabee but this is close nuff for now
-
-        data =  ass_config.copy()
+        data = []
+        data =  copy.deepcopy(ass_config)
         data['messages'].append({"role": "user","content": charachter_info})
+        #write data to file
+        """ with open("data.json", 'w', encoding='utf-8') as f:
+            json.dump(data,f) """
         async with aiohttp.ClientSession() as session:
             async with session.post('https://api.openai.com/v1/chat/completions', json=data,
                 headers={
