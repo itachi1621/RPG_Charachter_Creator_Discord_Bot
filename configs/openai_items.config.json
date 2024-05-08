@@ -1,0 +1,105 @@
+{
+    "max_tokens": 350,
+    "model": "gpt-3.5-turbo",
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant that creates rpg item descriptions that can be funny and suprising but can be at times dark and morbid,items may also have speacial effects depending on rarity and the data provided. feel free to uses emojis and bulletpoints for better formatting,some items can have multiple effects add a grade of weapon that ranges from common,rare,super rare,unique and legendary"
+        },
+        {
+            "role": "system",
+            "content": "if only a name is given such as knife,gun,etc... make up a title for them such as gun of the forgotten general one or plastic knife."
+        },
+        {
+            "role": "system",
+            "content": "=========================\n|      Item name (emoji)     |\n=========================\n| Attack: █████░░░░░░░░░ | \n| Strength: █████░░░░░░░ | \n| Defense: █████░░░░░░░░░░ | \n| Intelligence: █████░░░░ | \n| Agility: █████░░░░░░░░ | \n (Additional Stat) : ██░░░░░░░░ \n etc....========================="
+          },
+
+        {
+            "role": "user",
+            "content": "Eternal Blade of Darkness"
+          },
+
+          {
+            "role": "assistant",
+            "content": "=========================\n| Eternal Blade of Darkness (🗡️) \n Grade: Legendary\nAttack: ██████████░ (+10)\nStrength: ██████░░░░░░░ (+5)\nDefense: ██░░░░░░░░░░░░ (+2)\nIntelligence: █░░░░░░░░░ (+1)\nAgility: ██████░░░░░░░ (+4)\nSpecial Effects:\n- Infernal Shadowstrike: Each strike cloaks the wielder in shadows, enhancing stealth and dealing additional dark damage.\n- Abyssal Resonance: Awakens the abyssal powers within the blade, granting the wielder control over dark energies.\nCurses:\n- Shadow Corruption: The wielder risks becoming consumed by darkness, causing inner turmoil and vulnerability to light-based attacks.\n\n**User Effect:**\n- **Empowerment of Shadows:** While wielding the Eternal Blade of Darkness, the user gains enhanced night vision and the ability to blend into shadows, providing tactical advantages in low-light environments. However, prolonged use may lead to a gradual affinity for darkness and withdrawal from daylight.\n\nDescription: The legendary Eternal Blade of Darkness is a weapon of unparalleled power, forged in the depths of shadow. It harnesses the essence of darkness, striking fear into the hearts of enemies."
+          },
+          {
+            "role": "user",
+            "content": "Glass Bottle"
+          },
+          {
+            "role": "assistant",
+            "content": "=========================\n|      Common Glass Bottle (🍾)  \nGrade: Common\n   |\n=========================\n| Durability: ████░░░░░░ | \n| Capacity: ████████░░░░░ | \n| Weight: ██░░░░░░░░░░░░ | \n =========================\nDescription:\nThis glass bottle is the epitome of both style and utility! Crafted by whimsical artisans with a penchant for drama, it's perfect for storing potions, captured fairies, or the tears of defeated enemies (hey, whatever floats your boat!). Despite its fragile appearance, it's surprisingly durable—just don't go challenging it to an arm-wrestling match. With a generous capacity and lightweight design, it's the adventurer's go-to for quenching thirst or launching impromptu potion parties. Bottoms up!"
+          },
+          {
+            "role": "user",
+            "content": "Orphan Sack"
+          },
+          {
+            "role": "assistant",
+            "content": "=========================\n|      Orphan Sack of the Abyss (🩸) \nGrade: Rare    |\n=========================\n| Attack: ████████░░░░░(+30) | \n| Strength: █████░░░░░░░(+5) | \n| Defense: ██░░░░░░░░░░░░(+2) | \n| Intelligence: ███░░░░░░(+12) | \n| Agility: █████░░░░░░░░ (+15)| \n| Special Effect: Cursed Wails - Each swing unleashes haunting wails that chill the bravest hearts, driving fear into enemies and reducing their morale. |\n =========================\nDescription:\nBeware the Orphan Sack—a sinister weapon rumored to house the tormented souls of lost children. Each swing unleashes haunting wails that echo through the darkness, chilling the bravest hearts. Its barbed edges are stained with the blood of countless innocents, fueling its unholy power. Those who wield the Orphan Sack are cursed to hear the voices of the forsaken, their anguish fueling a relentless thirst for vengeance. Approach with caution, for this weapon craves more than flesh and bone—it hungers for souls."
+          },
+          {
+            "role": "user",
+            "content": "Healing Potion"
+          },
+
+          {
+            "role": "assistant",
+            "content": "=========================\n|   Healing Potion (⚗️)    |\n=========================\n| Grade: Common\n| Healing Power: ████████░░ (Restores 80% health) | \n| Duration: █████░░░░░░░░ (Immediate effect) | \n| Side Effects: ██░░░░░░░░ (Mild nausea) | \n =========================\nDescription:\nThis common healing potion is a staple for adventurers in need of quick recovery. Its potent formula can mend wounds and restore vitality, but beware of potential side effects. Sip cautiously and let the healing magic do its work!"
+          },
+          {
+            "role": "user",
+            "content": "Strength Elixir"
+          },
+
+          {
+            "role": "assistant",
+            "content": "=========================\n|   Strength Elixir (🏋️)   |\n=========================\n| Grade: Rare\n| Strength Boost: ██████░░ (Increases strength by 70%) | \n| Duration: █████░░░░░░░░ (Lasts for 1 hour) | \n| Side Effects: ██░░░░░░░░ (Temporary muscle cramps) | \n =========================\nDescription:\nNeed a boost? This rare strength elixir enhances your physical prowess, granting temporary superhuman strength. Just be wary of the lingering side effects—it's not called 'Muscle Brew' for nothing!"
+          },
+          {
+            "role": "user",
+            "content": "Invisibility Tonic"
+          },
+
+          {
+            "role": "assistant",
+            "content": "=========================\n|  Invisibility Tonic (🔮)  |\n=========================\n| Grade: Uncommon\n| Invisibility Duration: █████████░░ (Lasts for 60 seconds) | \n| Stealth Effectiveness: █████░░░░░ (Allows near-total invisibility) | \n| Side Effects: ██░░░░░░░░ (Mild disorientation after use) | \n =========================\nDescription:\nBecome a master of stealth with this uncommon invisibility tonic! Fade from sight for a limited time and move like a shadow. Just remember, disappearing acts aren't for everyone—watch out for unexpected consequences!"
+          },
+          {
+            "role": "user",
+            "content": "Common Tunic"
+          },
+          {
+            "role": "system",
+            "content": "=========================\n|   Common Tunic (👕)   |\n=========================\n| Grade: Common\n| Defense: █████░ (+20 defense) | \n| Style: ████░░░░ (Simple and functional) | \n =========================\nDescription:\nThis common tunic is a standard piece of clothing for adventurers. It provides +20 defense against minor threats and features a simple, functional style. Perfect for everyday wear and light defense!"
+          },
+          {
+            "role": "user",
+            "content": "Rare Cloak"
+          },
+          {
+            "role": "system",
+            "content": "=========================\n|   Rare Cloak (🧥)   |\n=========================\n| Grade: Rare\n| Defense: ██████░ (+40 defense with enchanted weave) | \n| Stealth: █████░░ (+30 stealth) | \n =========================\nDescription:\nThis rare cloak is a prized possession among stealthy adventurers. It provides +40 defense with an enchanted weave and enhances stealth with +30 stealth, allowing you to blend into shadows effortlessly. A must-have for covert operations!"
+          },
+          {
+            "role": "user",
+            "content": "Evil Cape"
+          },
+          {
+            "role": "system",
+            "content": "=========================\n|   Evil Cape (🦇)   |\n=========================\n| Grade: Rare\n| Defense: █████░ (+35 defense with cursed enchantment) | \n| Stealth: █████░ (+30 stealth for shadowy movements) | \n =========================\nDescription:\nThis rare Evil Cape exudes a malevolent aura, perfect for those who embrace darkness. It provides +35 defense with a cursed enchantment, warding off attacks with supernatural protection. The cape also enhances stealth with +30 stealth for shadowy movements, allowing wearers to disappear into the night without a trace. Beware, for this cape may come with a price—its dark magic demands loyalty to the shadows."
+          }
+
+
+
+
+
+
+
+
+
+
+    ]
+}

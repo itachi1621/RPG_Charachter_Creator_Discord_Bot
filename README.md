@@ -7,6 +7,7 @@ To interact with the RPG Character Maker bot, use the following commands in your
 
 - /version: Get information about the bot's version.
 - /create_character: Create a character by providing a  character description, like Greg the bowler from Taiwan.
+- /create_item : Creates an item with stats and a description etc like sword of light, potion of healing
 - /helpme: Get help on how to use the bot.
 
 ## Setup
@@ -22,14 +23,15 @@ Click on Copy Token under the bot username to get your DISCORD_BOT_TOKEN.
 Still in the Developer Portal, navigate to the Bot tab.
 Under Privileged Gateway Intents, enable the following intents:
 - Message Intent
+- Server Members Intent
 3. Set Environment Variables
 Create a .env file in the project directory with the following variables:
 ```bash
 OPENAI_API_KEY = ""
 DISCORD_BOT_TOKEN=""
-OPEN_AI_CONFIG_FILE_LOC="configs/openai_config.json USE FULL PATH to file not relative e,g C:/USers/SAM etc.. or /home/sam...."
+OPEN_AI_CONFIG_FILE_LOC=".../configs/ USE FULL PATH to the config folder not relative e.g C:/USers/SAM/rpgbot/configs etc.. or /home/sam/rpgbot/configs...."
 BOTNAME = "RPG Charahcter Maker"
-VERSION = "1.0.3"
+VERSION = "1.0.4"
 EMBED_COLOR = "0x0000FF"
 ```
 4. Install Dependencies
