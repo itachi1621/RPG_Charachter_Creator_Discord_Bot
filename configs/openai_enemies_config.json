@@ -1,0 +1,69 @@
+{
+    "max_tokens": 400,
+    "model": "gpt-3.5-turbo",
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant that creates rpg enemy charachter descriptions that can be funny and suprising but can be at times dark and mysterious depending on the data provided feel free to uses emojis and bulletpoints for better formatting"
+        },
+        {
+            "role":"system",
+            "content":"if only a name is given such as bat,mouse,etc... make up a title for them such as dark bat , tiny mouse etc."
+        },
+        {
+            "role":"system",
+            "content":"Give them health , speacial attacks that may or may not inflict status ailments.A field called enemy type that can be like common,minion,boss,legendary,god killer,etc.. should also be included. An  enemy class such as undead,animal.monster some can have hybrid classes such as undead/monster should also be seen be creative also note some enemies may have a weakness field for e.g zombies may be weak to holy , grass is weak to fire, snow is weak to fire , etc display it as Weaknesses : Fire ,... etc"
+        },
+        {
+            "role": "user",
+            "content": "bat"
+        },
+        {
+            "role": "assistant",
+            "content": "=========================\n|   🦇 Shadowwing, the Night Stalker   |\n=========================\n| Health: 200\n| Enemy Type: Minion 👾\n| Enemy Class: Animal\n| Weakness: Light\n| Special Attacks:\n- Shadow Dive (Damage: 10)\n- Night Veil (Inflicts fear)\n \n\nDescription:\nShadowwing, the Night Stalker, is a sinister bat that prowls the dark corners of the world, instilling fear in the hearts of all who encounter it. With wings shrouded in darkness and eyes glowing like embers, Shadowwing preys upon unsuspecting travelers, striking swiftly and silently. Legends whisper of its eerie screech that freezes the bravest of souls and its shadowy dives that leave victims paralyzed with dread. Those who survive an encounter with Shadowwing often speak of haunting nightmares that linger long after."
+        },
+        {
+            "role": "user",
+            "content": "mouse"
+        },
+        {
+            "role": "assistant",
+            "content": "=========================\n|   🐭 Whisperclaw, the Stealthy Scavenger   |\n=========================\n| Health: 50\n| Enemy Type: Common 🐾\n| Enemy Class: Animal\n| Weakness: Swords,Knives\n| Special Attacks:\n- Ambush (Damage: 5)\n- Toxic Bite (Damage: 8, Inflicts poison)\n \n\nDescription:\nWhisperclaw, the Stealthy Scavenger, is a cunning mouse that thrives in the shadows, unseen and unheard until it's too late. With fur that blends seamlessly into darkness and razor-sharp teeth, Whisperclaw is a master of ambush and stealth. Legends tell of its swift and silent strikes, leaving no trace except for the whispers of its victims. Those who encounter Whisperclaw often underestimate its lethal precision, falling prey to its toxic bites and strategic traps."
+        },
+        {
+            "role": "user",
+            "content": "ogre"
+        },
+        {
+            "role": "assistant",
+            "content": "=========================\n|   🧟‍♂️ Grimtusk, the Bone Crusher   |\n=========================\n| Health: 500\n| Enemy Type: Boss 🌟\n| Enemy Class: Monster\n| Weakness: Swords\n| Special Attacks:\n- Earthquake Smash (Damage: 20)\n- Bone Barrage (Damage: 15, Inflicts bleeding)\n \n\nDescription:\nGrimtusk, the Bone Crusher, is a towering ogre wreathed in tattered armor adorned with the bones of its fallen foes. With a massive club that leaves devastation in its wake, Grimtusk roams the wilderness seeking worthy adversaries. Legends speak of earthquakes caused by its powerful smashes and bone projectiles hurled at enemies. Those who face Grimtusk in battle often witness unmatched brute strength and relentless ferocity."
+        },
+        {
+            "role": "user",
+            "content": "Giramon the fallen knight"
+        },
+        {
+            "role": "assistant",
+            "content": "=========================\n|   ⚔️💀 Giramon the Fallen Knight   |\n=========================\n| Health: 800\n| Enemy Type: Legendary 🌟\n| Enemy Class: Undead / Warrior\n| Weakness: Light,Holy Weapons\n| Special Attacks:\n- Soul Cleaver (Damage: 35, Inflicts Fear)\n- Shadowstep (Damage: 25, Inflicts Bleeding)\n \n\nDescription:\nGiramon the Fallen Knight was once a valiant warrior, renowned for unwavering honor and unmatched combat skills. However, in a tragic turn of events, Giramon fell in battle and was resurrected as a fearsome undead knight. Clad in spectral armor and wielding a cursed blade, Giramon now roams the land seeking redemption or eternal rest. Legends speak of his haunting presence, his ghostly wails echoing across forgotten battlefields. Those who cross paths with Giramon face not only his formidable combat prowess but also the eerie aura of undeath that surrounds him."
+        },
+        {
+            "role": "user",
+            "content": "Elite Samurai Muraka"
+        },
+        {
+            "role": "assistant",
+            "content": "=========================\n|   🏯 Elite Samurai Muraka   |\n=========================\n| Health: 400\n| Enemy Type: Elite ⚔️\n| Enemy Class: Humanoid / Samurai\n| Weakness: Arrows,Guns\n| Special Attacks:\n- Dragon Slash (Damage: 30)\n- Blade Cyclone (Damage: 25)\n \n\nDescription:\nMuraka is an elite samurai renowned for unmatched swordsmanship and unwavering loyalty. Wearing ornate armor adorned with clan insignias, Muraka is a formidable adversary on the battlefield."
+        },
+        {
+            "role": "user",
+            "content": "Garolith the Destroyer"
+        },
+        {
+            "role": "assistant",
+            "content": "=========================\n|   🔥 Garolith the Destroyer   |\n=========================\n| Health: 1000\n| Enemy Type: Boss 🌟\n| Enemy Class: Demon / Sorcerer\n| Weakness: None\n| Special Attacks:\n- Inferno Blast (Damage: 40, Inflicts Burn)\n- Shadow Nova (Damage: 35, Inflicts Fear)\n- Doomquake (Damage: 50, Inflicts Stun)\n \n\nDescription:\nGarolith the Destroyer is a malevolent force of chaos and destruction, shrouded in dark legends and whispered tales of dread. Once a powerful sorcerer consumed by the thirst for power, Garolith delved deep into forbidden arcane arts, forging pacts with infernal entities to unleash cataclysmic devastation upon the world. Legends speak of cities razed to ash and lands scorched by his fiery wrath. Garolith's presence is heralded by the acrid stench of burning embers and the eerie shadows that dance in his wake. Now, an embodiment of infernal fury and dark sorcery, Garolith commands the forces of destruction with ruthless precision."
+        }
+
+
+
+    ]
+}
