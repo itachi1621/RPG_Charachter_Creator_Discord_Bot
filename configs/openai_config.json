@@ -1,5 +1,5 @@
 {
-    "max_tokens": 1000,
+    "max_tokens": 550,
     "model": "gpt-3.5-turbo",
     "messages": [
         {

@@ -16,6 +16,7 @@ config_file = os.path.normpath(os.path.join(base_config_path,'openai_config.json
 item_config = os.path.normpath(os.path.join(base_config_path,'openai_items_config.json'))
 enemies_config = os.path.normpath(os.path.join(base_config_path,'openai_enemies_config.json'))
 credits_config = os.path.normpath(os.path.join(base_config_path,'credits.json'))
+discord_desc_config = os.path.normpath(os.path.join(base_config_path,'openai_discord_descriptions.json'))
 TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 BOT_NAME = os.getenv("BOTNAME")
 VERSION = os.getenv("VERSION")
@@ -37,6 +38,8 @@ with open(enemies_config) as enemy_file:
 
 with open(credits_config) as credit_file:
     app_friends = json.loads(credit_file.read())
+with open(discord_desc_config) as discord_desc_file:
+    disc_desc_conf = json.loads(discord_desc_file.read())
 
 
 friend_string = ""
@@ -355,6 +358,201 @@ async def create_enemy(interaction:discord.Interaction, * ,enemy_info:str):
         print(e)
         await interaction.followup.send("An error occured, please try again later.")
         return None
+
+@bot.tree.command(name="create_profile_description",description="make a description for your discord profile rpg style")
+async def create_profile_desc(interaction:discord.Interaction):
+    try :
+        await interaction.response.defer()
+        open_ai_key = OPENAI_KEY
+        if open_ai_key is None:
+           print('No openai key found')
+           return None
+       #get users guild id
+        guild_id = interaction.guild_id
+        #find the usrs guild name
+        guild = await bot.fetch_guild(guild_id)
+
+        user = await guild.fetch_member(interaction.user.id)
+        #print(user)
+        charachter_info = str(user.display_name)
+        message_length = len(charachter_info)
+    #if the message is longer than 2000 characters then just return an error
+        if message_length > 2000:
+            response = {}
+            response['message_error'] = "Message is too long"
+            return(response)
+        #if the message is empty then just return an error
+        if message_length == 0:
+            response = {}
+            response['message_error'] = "Message is empty"
+            return(response)
+        if message_length >= 256:
+            message = message[:128] + '....' #truncate the message to 128 characters and add .... to the end discord embeds can only hold 256 characters
+            #i may intro nltk to summarize the message later mabee but this is close nuff for now
+        data = []
+        data =  copy.deepcopy(disc_desc_conf)
+        #print(charachter_info)
+        data['messages'].append({"role": "user","content": charachter_info})
+        #write data to file
+        """ with open("data.json", 'w', encoding='utf-8') as f:
+            json.dump(data,f) """
+        async with aiohttp.ClientSession() as session:
+            async with session.post('https://api.openai.com/v1/chat/completions', json=data,
+                headers={
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer '+ OPENAI_KEY,
+                }) as resp:
+                if resp.status != 200:
+                    response = {}
+                    response['message_error'] = "Could not get response"
+                    #return(response)
+                response = await resp.json()
+                if("message_error" in response):
+                    return await interaction.followup.send(response['message_error'])
+                elif("error" in response):
+                    raise Exception(response['error'])
+                else:
+                    reply = response['choices'][0]['message']['content']
+                    embed = discord.Embed(title=charachter_info, color=PRIMARY_EMBED_COLOR)
+                    #if reply is greater than or equal to 1024 characters then split the reply into n messages where n is the number of times 1024 goes into the length of the reply
+                    if len(reply) >= 1024:
+                        #split the reply into n messages where n is the number of times 1024 goes into the length of the reply
+                        #get the number of messages
+                        message_count = len(reply) // 1024 #Divide the length of the reply by 1024 and get the integer // does not keep the remainder
+                        #get the remainder
+                        remainder = len(reply) % 1024
+                        #if there is a remainder then add 1 to the message count
+                        if remainder > 0:
+                            message_count = message_count + 1
+                        #split the reply into n messages
+                        #create a list to hold the messages
+                        messages = []
+                        #create a counter
+                        counter = 0
+                        #create a variable to hold the start position
+                        start = 0
+                        #create a variable to hold the end position
+                        end = 1024
+                        #loop through the message count and append the message to the messages list
+                        while counter < message_count:
+                            #append the message to the messages list
+                            messages.append(reply[start:end])
+                            #increment the counter
+                            counter = counter + 1
+                            #increment the start position
+                            start = start + 1024
+                            #increment the end position
+                            end = end + 1024
+                        #loop through the messages list and send each message
+                        for message in messages:
+                            embed.add_field(name=" ", value=message, inline=True)
+                        #send the embed
+                    else:
+                        embed.add_field(name=" ", value=reply, inline=True)
+                    await interaction.followup.send(embed=embed)
+    except Exception as e:
+        print(e)
+        await interaction.followup.send("An error occured, please try again later.")
+        return None
+
+@bot.tree.command(name="create_my_discord_charachter",description="make a description for your discord user rpg style")
+async def create_disc_rpg_profile(interaction:discord.Interaction):
+    try :
+        await interaction.response.defer()
+        open_ai_key = OPENAI_KEY
+        if open_ai_key is None:
+           print('No openai key found')
+           return None
+       #get users guild id
+        guild_id = interaction.guild_id
+        #find the usrs guild name
+        guild = await bot.fetch_guild(guild_id)
+
+        user = await guild.fetch_member(interaction.user.id)
+        #print(user)
+        charachter_info = str(user.display_name)
+        message_length = len(charachter_info)
+    #if the message is longer than 2000 characters then just return an error
+        if message_length > 2000:
+            response = {}
+            response['message_error'] = "Message is too long"
+            return(response)
+        #if the message is empty then just return an error
+        if message_length == 0:
+            response = {}
+            response['message_error'] = "Message is empty"
+            return(response)
+        if message_length >= 256:
+            message = message[:128] + '....' #truncate the message to 128 characters and add .... to the end discord embeds can only hold 256 characters
+            #i may intro nltk to summarize the message later mabee but this is close nuff for now
+        data = []
+        data =  copy.deepcopy(ass_config)
+        #print(charachter_info)
+        data['messages'].append({"role": "user","content": charachter_info})
+        #write data to file
+        """ with open("data.json", 'w', encoding='utf-8') as f:
+            json.dump(data,f) """
+        async with aiohttp.ClientSession() as session:
+            async with session.post('https://api.openai.com/v1/chat/completions', json=data,
+                headers={
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer '+ OPENAI_KEY,
+                }) as resp:
+                if resp.status != 200:
+                    response = {}
+                    response['message_error'] = "Could not get response"
+                    #return(response)
+                response = await resp.json()
+                if("message_error" in response):
+                    return await interaction.followup.send(response['message_error'])
+                elif("error" in response):
+                    raise Exception(response['error'])
+                else:
+                    reply = response['choices'][0]['message']['content']
+                    embed = discord.Embed(title=charachter_info, color=PRIMARY_EMBED_COLOR)
+                    #if reply is greater than or equal to 1024 characters then split the reply into n messages where n is the number of times 1024 goes into the length of the reply
+                    if len(reply) >= 1024:
+                        #split the reply into n messages where n is the number of times 1024 goes into the length of the reply
+                        #get the number of messages
+                        message_count = len(reply) // 1024 #Divide the length of the reply by 1024 and get the integer // does not keep the remainder
+                        #get the remainder
+                        remainder = len(reply) % 1024
+                        #if there is a remainder then add 1 to the message count
+                        if remainder > 0:
+                            message_count = message_count + 1
+                        #split the reply into n messages
+                        #create a list to hold the messages
+                        messages = []
+                        #create a counter
+                        counter = 0
+                        #create a variable to hold the start position
+                        start = 0
+                        #create a variable to hold the end position
+                        end = 1024
+                        #loop through the message count and append the message to the messages list
+                        while counter < message_count:
+                            #append the message to the messages list
+                            messages.append(reply[start:end])
+                            #increment the counter
+                            counter = counter + 1
+                            #increment the start position
+                            start = start + 1024
+                            #increment the end position
+                            end = end + 1024
+                        #loop through the messages list and send each message
+                        for message in messages:
+                            embed.add_field(name=" ", value=message, inline=True)
+                        #send the embed
+                    else:
+                        embed.add_field(name=" ", value=reply, inline=True)
+                    await interaction.followup.send(embed=embed)
+    except Exception as e:
+        print(e)
+        await interaction.followup.send("An error occured, please try again later.")
+        return None
+
+
+
 
 
 
